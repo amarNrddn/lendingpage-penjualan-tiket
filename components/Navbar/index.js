@@ -24,9 +24,9 @@ export default function Navbar() {
     return (
         <nav className='container navbar navbar-expand-lg navbar-dark'>
             <div className='container-fluid'>
-                <Link href={'/'}>
+                <Link href={'/'} legacyBehavior>
                     <a className='navbar-brand'>
-                        <img src='/images/logo.svg' alt='semina' />
+                        <h1>MARZKYY</h1>
                     </a>
                 </Link>
                 <button
@@ -45,7 +45,7 @@ export default function Navbar() {
                         className={`navbar-nav ${router.pathname !== '/signin' ? 'mx-auto' : 'ms-auto'
                             } my-3 my-lg-0`}
                     >
-                        <NavLink href={'/'}>Home</NavLink>
+                        <NavLink href={'/'}>Home</NavLink >
                         <NavLink href={'/browse'}>Browse</NavLink>
                         <NavLink href={'/stories'}>Stories</NavLink>
                         <NavLink href={'/about'}>About</NavLink>
@@ -87,7 +87,7 @@ export default function Navbar() {
                                             aria-labelledby='navbarDropdown'
                                         >
                                             <li>
-                                                <Link href={'/dashboard'}>
+                                                <Link href={'/dashboard'} legacyBehavior>
                                                     <a className='dropdown-item'>Dashboard</a>
                                                 </Link>
                                             </li>
@@ -132,7 +132,7 @@ export default function Navbar() {
                                 </div>
                             ) : (
                                 <div className='d-grid'>
-                                    <Link href={'/signin'}>
+                                    <Link href={'/signin'} legacyBehavior>
                                         <a className='btn-navy'>Sign In</a>
                                     </Link>
                                 </div>
