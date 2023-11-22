@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { formatDate } from '../../utils/formatDate';
 
 export default function CardEvent({ data, title, subTitle }) {
-    console.log(data)
     return (
         <section className='grow-today'>
             <div className='container'>
