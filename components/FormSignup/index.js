@@ -13,7 +13,7 @@ export default function FormSignin() {
     const [form, setForm] = useState({
         email: '',
         password: '',
-        firstName: '',
+        fristName: '',
         lastName: '',
         role: '',
     });
@@ -77,8 +77,8 @@ export default function FormSignin() {
                     <TextInput
                         label={'First Name'}
                         type={'text'}
-                        value={form.firstName}
-                        name='firstName'
+                        value={form.fristName}
+                        name='fristName'
                         placeholder='First name here'
                         onChange={handleChange}
                     />

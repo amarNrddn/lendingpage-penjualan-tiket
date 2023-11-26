@@ -18,7 +18,7 @@ export const postData = async (url, payload, token) => {
     })
 }
 
-export const putData = async (token, payload, url) => {
+export const putData = async (url, payload, token) => {
     return await axios.put(`${url}`, payload, {
         headers: {
             Authorization: `Bearer ${token}`,
