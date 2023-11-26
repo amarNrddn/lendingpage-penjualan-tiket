@@ -40,7 +40,7 @@ export default function FormSignin() {
                 type={'email'}
                 name='email'
                 value={form.email}
-                placeholder={'semina@bwa.com'}
+                placeholder={'Marzkyy@mrzyy.com'}
                 onChange={handleChange}
             />
 
