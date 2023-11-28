@@ -23,39 +23,43 @@ export default function FormSignin() {
     };
 
     const handleSubmit = async () => {
-        if (keyword === 'otp') {
-            putData('api/v1/active', {
-                otp: otp,
-                email: form.email,
-            }).then((res) => {
-                if (res.data) {
-                    toast.success('berhasil aktipkan akun', {
-                        position: 'top-right',
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    });
-                    router.push('/signin');
-                }
-            });
-        } else {
-            postData('api/v1/auth/siginup', form).then((res) => {
-                if (res.data) {
-                    toast.success('berhasil signup', {
-                        position: 'top-right',
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    });
-                    router.push({ pathname: '/signup', query: { keyword: 'otp' } });
-                }
-            });
+        try {
+            if (keyword === 'otp') {
+                putData('api/v1/active', {
+                    otp: otp,
+                    email: form.email,
+                }).then((res) => {
+                    if (res.data) {
+                        toast.success('berhasil aktipkan akun', {
+                            position: 'top-right',
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        });
+                        router.push('/signin');
+                    }
+                });
+            } else {
+                postData('api/v1/auth/siginup', form).then((res) => {
+                    if (res.data) {
+                        toast.success('berhasil signup', {
+                            position: 'top-right',
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        });
+                        router.push({ pathname: '/signup', query: { keyword: 'otp' } });
+                    }
+                });
+            }
+        } catch (error) {
+            error(toast)
         }
     };
 

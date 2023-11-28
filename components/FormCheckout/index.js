@@ -13,7 +13,7 @@ export default function FormCheckout({ tickets }) {
     const [form, setForm] = useState({
         email: '',
         lastName: '',
-        firstName: '',
+        fristName: '',
         role: '',
         payment: '',
         event: router.query.id,
@@ -77,7 +77,7 @@ export default function FormCheckout({ tickets }) {
                 payment: form.payment,
                 personalDetail: {
                     lastName: form.lastName,
-                    firstName: form.firstName,
+                    fristName: form.fristName,
                     email: form.email,
                     role: form.role,
                 },
@@ -136,8 +136,8 @@ export default function FormCheckout({ tickets }) {
                             placeholder='First name here'
                             className='form-control'
                             id='first_name'
-                            name='firstName'
-                            value={form.firstName}
+                            name='fristName'
+                            value={form.fristName}
                             onChange={handleChange}
                         />
                     </div>

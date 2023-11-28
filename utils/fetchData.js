@@ -1,5 +1,4 @@
 import axios from '../configs';
-import Cookies from 'js-cookie';
 
 export const getData = (url, params, token) => {
     return axios.get(`${url}`, {
